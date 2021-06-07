@@ -11,7 +11,7 @@
     RewriteRule ^ ^$1 [N]
 
     RewriteCond %{REQUEST_URI}  (\.\w+$) [NC]
-    RewriteRule ^(.*)$ public/$
+    RewriteRule ^(.*)$ public/$1
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
