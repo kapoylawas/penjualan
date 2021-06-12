@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-small btn-flat btn-primary">Simpan</button>
-                    <button type="button" class="btn btn-small btn-flat btn-default" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-small btn-flat btn-warning" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </form>
