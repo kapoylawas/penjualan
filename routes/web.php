@@ -20,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
 
-// Route::get('/', fn () => redirect()->route('login'));
+// Route::get('/', function () {
+//     return view('/auth/login');
+// });
+
+//untuk versi php 7,4 keatas
+Route::get('/', fn () => redirect()->route('login'));
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('home');
