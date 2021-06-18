@@ -39,7 +39,7 @@ class PembelianController extends Controller
             ->addColumn('supplier', function ($pembelian) {
                 return $pembelian->supplier->nama;
             })
-            ->addColumn('diskon', function ($pembelian) {
+            ->editColumn('diskon', function ($pembelian) {
                 return $pembelian->diskon . '%';
             })
             ->addColumn('aksi', function ($pembelian) {
@@ -58,10 +58,10 @@ class PembelianController extends Controller
     {
         $pembelian = new Pembelian();
         $pembelian->id_supplier = $id;
-        $pembelian->total_item = 0;
+        $pembelian->total_item  = 0;
         $pembelian->total_harga = 0;
-        $pembelian->diskon = 0;
-        $pembelian->bayar = 0;
+        $pembelian->diskon      = 0;
+        $pembelian->bayar       = 0;
         $pembelian->save();
 
         session(['id_pembelian' => $pembelian->id_pembelian]);
@@ -73,17 +73,13 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         $pembelian = Pembelian::findOrFail($request->id_pembelian);
-
         $pembelian->total_item = $request->total_item;
         $pembelian->total_harga = $request->total;
         $pembelian->diskon = $request->diskon;
         $pembelian->bayar = $request->bayar;
         $pembelian->update();
 
-        // return $pembelian;
         $detail = PembelianDetail::where('id_pembelian', $pembelian->id_pembelian)->get();
-
-        // return $detail;
         foreach ($detail as $item) {
             $produk = Produk::find($item->id_produk);
             $produk->stok += $item->jumlah;
@@ -91,7 +87,6 @@ class PembelianController extends Controller
         }
 
         return redirect()->route('pembelian.index');
-        return $request->all();
     }
 
     public function show($id)
@@ -105,7 +100,7 @@ class PembelianController extends Controller
                 return '<span class="label label-success">' . $detail->produk->kode_produk . '</span>';
             })
             ->addColumn('nama_produk', function ($detail) {
-                return ($detail->produk->nama_produk);
+                return $detail->produk->nama_produk;
             })
             ->addColumn('harga_beli', function ($detail) {
                 return 'Rp. ' . format_uang($detail->harga_beli);
@@ -123,7 +118,7 @@ class PembelianController extends Controller
     public function destroy($id)
     {
         $pembelian = Pembelian::find($id);
-        $detail = PembelianDetail::where('id_pembelian', $pembelian->id_pembelian)->get();
+        $detail    = PembelianDetail::where('id_pembelian', $pembelian->id_pembelian)->get();
         foreach ($detail as $item) {
             $produk = Produk::find($item->id_produk);
             if ($produk) {
