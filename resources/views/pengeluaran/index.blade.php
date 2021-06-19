@@ -54,6 +54,7 @@
                 {data: 'aksi', searchable: false, sortable: false},
             ]
         });
+        
         $('#modal-form').validator().on('submit', function (e) {
             if (! e.preventDefault()) {
                 $.post($('#modal-form form').attr('action'), $('#modal-form form').serialize())

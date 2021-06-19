@@ -19,9 +19,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('template/dist/css/skins/_all-skins.min.css') }}">
-    <!-- Date Picker -->
-    <link rel="stylesheet"
-        href="{{ asset('template/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    
     <!-- Daterange picker -->
     <link rel="stylesheet"
         href="{{ asset('template/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
@@ -104,9 +102,7 @@
     <!-- daterangepicker -->
     <script src="{{ asset('template/bower_components/moment/min/moment.min.js') }}"></script>
     <script src="{{ asset('template/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <!-- datepicker -->
-    <script src="{{ asset('template/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}">
-    </script>
+    
     <!-- Bootstrap WYSIHTML5 -->
     <script src="{{ asset('template/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
     <!-- Slimscroll -->
