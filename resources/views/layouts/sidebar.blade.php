@@ -75,12 +75,12 @@
         </li>
         <li class="header">SYSTEM</li>
         <li>
-          <a href="#">
+          <a href="{{ route('user.index') }}">
             <i class="fa fa-user-plus"></i> <span>User</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ route('setting.index') }}">
             <i class="fa fa-cogs"></i> <span>Pengaturan</span>
           </a>
         </li>

@@ -97,7 +97,7 @@
 
     <table width="100%">
         <tr>
-            <td><b>Terimah Kasih Telah Berbelanja dan Samapi Jumpa Kembali</b></td>
+            <td><b>Terimah Kasih Telah Berbelanja dan Sampai Jumpa Kembali</b></td>
             <td class="text-center">Kasir
                 <br>
                 <br>
