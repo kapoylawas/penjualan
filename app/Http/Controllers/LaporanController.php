@@ -43,7 +43,7 @@ class LaporanController extends Controller
 
             $row = array();
             $row['DT_RowIndex'] = $no++;
-            $row['tanggal'] = tanggal_indonesia($tanggal, false);
+            $row['tanggal'] = tanggal_indonesia($tanggal);
             $row['penjualan'] = format_uang($total_penjualan);
             $row['pembelian'] = format_uang($total_pembelian);
             $row['pengeluaran'] = format_uang($total_pengeluaran);

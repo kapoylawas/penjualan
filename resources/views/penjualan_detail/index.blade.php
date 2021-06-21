@@ -165,6 +165,7 @@
             ],
             dom: 'Brt',
             bSort: false,
+            bPaginate: false,
         })
         .on('draw.dt', function () {
             loadForm($('#diskon').val());
