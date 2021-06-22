@@ -4,7 +4,7 @@
     <div class="login-box">
   <div class="login-logo">
     <a href="{{ url('/') }}">
-    <img src="{{ asset('img/shopping.png') }}" alt="shopping.png" width="80">
+    <img src="{{ url($setting->path_logo) }}" alt="shopping.png" width="80">
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

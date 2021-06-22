@@ -26,12 +26,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
+// Route::get('/', function () {
+//     return view('/auth/login');
+// });
 
 //untuk versi php 7,4 keatas
-// Route::get('/', fn () => redirect()->route('login'));
+Route::get('/', fn () => redirect()->route('login'));
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('home');
@@ -93,4 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::get('/setting/first', [SettingController::class, 'show'])->name('setting.show');
     Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
+
+    Route::get('/profil', [UserController::class, 'profil'])->name('user.profil');
+    Route::post('/profil', [UserController::class, 'updateProfil'])->name('user.update_profil');
 });
