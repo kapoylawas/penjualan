@@ -31,7 +31,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ url(auth()->user()->foto) }}" class="img-circle img-profil" alt="User Image">
+                <img src="{{ url(auth()->user()->foto ?? '') }}" class="img-circle img-profil" alt="User Image">
 
                 <p>
                   {{ auth()->user()->name }} - {{ auth()->user()->email }}
